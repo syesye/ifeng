@@ -172,11 +172,13 @@ a:hover{text-decoration:underline;color:#464646}
     font-size: .36rem;
     margin-bottom: .25rem;
 }
-.list .listRight.i-desc{
-
+.list .listRight .i-desc{
+    margin-top: .05rem;
 }
 .list .listRight .i-desc>span{
     float: left;
+    height: .24rem;
+    line-height: .24rem;
     font-size: .22rem;
     color: #999;
 }
@@ -199,11 +201,11 @@ a:hover{text-decoration:underline;color:#464646}
 }
 .list .listRight .i-desc .i-comment span{
     float: right;
-    font-size: .2rem;
+    font-size: .17rem;
     color: red;
     border: .01rem solid red;
     width: .48rem;
-    line-height: .2rem;
+    line-height: .17rem;
     text-align: center;
     padding: .05rem .05rem;
 }
