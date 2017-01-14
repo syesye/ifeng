@@ -168,12 +168,12 @@ a:hover{text-decoration:underline;color:#464646}
 }
 .list .listRight h3{
     max-height: .88rem;
-    line-height: .4rem;
+    line-height: .44rem;
     font-size: .36rem;
     margin-bottom: .25rem;
 }
 .list .listRight .i-desc{
-    margin-top: .05rem;
+    font-size: .22rem;
 }
 .list .listRight .i-desc>span{
     float: left;
