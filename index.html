@@ -87,7 +87,6 @@
     <%var _this=n;%>
     <%if(_this.style.images){%>
     <!--三小图-->
-    <%console.log('三小图')%>
     <div class="list clearfix threeImg">
         <a href="<%=_this.link.weburl%>">
             <div class="listRight">
@@ -110,7 +109,6 @@
     </div>
     <%return false%>
     <%}else if(_this.type=='phvideo'){%>
-    <%console.log('视频')%>
     <!--视频-->
     <div class="list clearfix threeImg video">
         <div class="video-btn">
@@ -136,7 +134,6 @@
     <%return false%>
     <%}else if(_this.thumbnail){%>
     <!--左图右文-->
-    <%console.log('左图右文')%>
     <div class="list clearfix">
         <a href="<%=_this.link.weburl%>">
             <div class="listLeft">
@@ -194,7 +191,7 @@
 <script>
     var focusList=null;
     $.ajax({
-        url:"http://api.iclient.ifeng.com/ClientNews?id=SYLB10,SYDT10&gv=5.4.0&os=ios&uid=8jWzrXDWQeep2Nw4AZYzmHxkbneHy4Fj&callback=jQuery191037427085312083364_1483258003039&_=1483258003040",
+        url:"https://api.iclient.ifeng.com/ClientNews?id=SYLB10,SYDT10&gv=5.4.0&os=ios&uid=8jWzrXDWQeep2Nw4AZYzmHxkbneHy4Fj&callback=jQuery191037427085312083364_1483258003039&_=1483258003040 ",
         dataType:'jsonp',
         success:function (data) {
             for (var i=0;i<data.length;i++){
