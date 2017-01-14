@@ -1,0 +1,249 @@
+body,dl,dt,dd,ul,ol,h1,h2,h3,h4,h5,h6,form,input,textarea,p,table,th,td{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+body{width:100%;/*min-width:1000px;*/font:12px/18px Microsoft YaHei,Helvetica,sans-serif;background:#fff}
+input,select,button,textarea{vertical-align:middle;font-size:12px;outline:none}
+ol,ul{list-style:none}img{border:0}em{font-style:normal}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:100}
+table{border-collapse:collapse;border-spacing:0}
+textarea{resize:none}
+a{outline:none;text-decoration:none;color:#464646}
+a:hover{text-decoration:underline;color:#464646}
+.clearfix{*zoom:1}
+.clearfix:after{content:" ";overflow:hidden;clear:both;display:block;height:0}
+
+.v-mobile-header{
+    height: .94rem;
+    width: 100%;
+    text-indent:-9999rem;
+    background: #f54343;
+}
+.v-mobile-header .i-logo{
+    float: left;
+    width: 2.2rem;
+    height: .46rem;
+    margin: .2rem 0 0 .19rem;
+}
+.v-mobile-header .i-logo a{
+    display: block;
+    width: 2.2rem;
+    height: .46rem;
+    background: url("../img/ifeng-logo.png") no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.v-mobile-header .i-login{
+    float: right;
+    margin: .3rem .2rem 0 0;
+}
+.v-mobile-header .i-login .i-login-search{
+    display: block;
+    width: .38rem;
+    height: .38rem;
+    background: url("../img/ifeng-ser.png") no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.top-menu{
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;/*出现滚动条*/
+
+}
+.top-menu::-webkit-scrollbar{
+    display: none;
+}
+.top-menu-inner{
+    white-space: nowrap;
+    font-size: 0;
+}
+.top-menu-inner a{
+    display: inline-block;
+    font-size: .36rem;
+    color: #6b7989;
+    width: 1.07rem;
+    text-align: center;
+    text-decoration: none;
+    height: .8rem;
+    line-height: .8rem;
+}
+.top-menu-inner a.cur{
+    height: .75rem;
+    line-height: .75rem;
+    border-bottom: .05rem solid #f54343;
+}
+.focus{
+    width: 100%;
+    height: 4.42rem;
+    position: relative;
+}
+.swiper-container{
+    height: 100%;
+}
+.focus img{
+    width: 100%;
+    display: block;
+}
+.focus .swiper-slide h3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: .6rem;
+    width: 100%;
+    line-height: .6rem;
+    font-size: .33rem;
+    color: #fff;
+    background: rgba(0,0,0,.6);
+    padding-left: .15rem;
+}
+.focus .swiper-slide h3 span{
+    background: #f54343;
+    font-size: .28rem;
+    color: #fff;
+    padding: .03rem .06rem;
+    margin-right: .1rem;
+}
+
+.focus .swiper-pagination{
+    position: absolute;
+    bottom: .9rem;
+    left:50%;
+    width: .95rem;
+    color: #fff;
+}
+
+.focus .swiper-container-horizontal .swiper-pagination-bullets{
+    bottom: .6rem;
+    margin-right: .05rem;
+
+}
+.focus .swiper-pagination-bullet{
+    width: .2rem;
+    height: .2rem;
+    background: red;
+}
+.focus .swiper-pagination-bullet-active{
+    background: #fff;
+}
+
+
+/*伪类*/
+/*.swiper-container .swiper-slide:before,.swiper-wrapper:before {
+    display: block;
+    content: '';
+    padding-top: 56%
+}*/
+
+.swiper-container .cover {
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    background-repeat: no-repeat;
+    background-size:cover;
+    -webkit-background-size:cover;
+    background-position:center center;
+}
+
+
+/*左图右文*/
+.list{
+    width: 6.9rem;
+    padding: .22rem .34rem;
+    border-bottom: 1px solid #ccc;
+}
+.list .listLeft{
+    float: left;
+}
+.list .listLeft a{
+
+}
+.list .listLeft img {
+   width: 1.82rem;
+    height: 1.3rem;
+}
+.list .listRight{
+    float: right;
+    width: 4.76rem;
+}
+.list .listRight h3{
+    max-height: .88rem;
+    line-height: .4rem;
+    font-size: .36rem;
+    margin-bottom: .25rem;
+}
+.list .listRight.i-desc{
+
+}
+.list .listRight .i-desc>span{
+    float: left;
+    font-size: .22rem;
+    color: #999;
+}
+.list .listRight .i-desc .i-comment{
+    float: right;
+}
+.list .listRight .i-desc .i-comment em{
+    float: left;
+    font-size: .22rem;
+    color: #999;
+    margin-right: .1rem;
+}
+.list .listRight .i-desc .i-comment em:after{
+    display: inline-block;
+    content: '';
+    width: .24rem;
+    height: .2rem;
+    background: url("../img/ifeng-pl.png") no-repeat;
+    margin-left: .1rem;
+}
+.list .listRight .i-desc .i-comment span{
+    float: right;
+    font-size: .2rem;
+    color: red;
+    border: .01rem solid red;
+    width: .48rem;
+    line-height: .2rem;
+    text-align: center;
+    padding: .05rem .05rem;
+}
+.list .words{
+    width: 100%;
+}
+.threeImg .listRight{
+    clear: both;
+    width: 100%;
+}
+.threeImg .listLeft{
+    padding-bottom: .2rem;
+}
+.threeImg .listLeft img{
+    width: 2.24rem;
+    height: 1.54rem;
+    margin-right: .03rem;
+}
+.video{
+    position: relative;
+}
+.video .video-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -.56rem;
+    margin-top: -.56rem;
+    width: 1.12rem;
+    height: 1.12rem;
+    background: url("../img/ifeng-btn.png") no-repeat;
+    background-size: contain;
+}
+.video .listLeft img{
+    width: 6.88rem;
+    height: 3.88rem;
+}
+
+
+
+
+
+
+

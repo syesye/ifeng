@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>凤凰视频</title>
+    <link rel="stylesheet" href="./css/css.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+</head>
+<body>
+<!--头部-->
+<div class="v-mobile-header">
+    <h1 class="i-logo">
+        <a href="#" title="凤凰视频">凤凰视频</a>
+    </h1>
+    <div class="i-login">
+        <i class="i-login-search"></i>
+    </div>
+</div>
+<!--导航-->
+<div class="top-menu">
+    <div class="top-menu-inner">
+        <a href="#" class="cur">首页</a>
+        <a href="#">军事</a>
+        <a href="#">娱乐</a>
+        <a href="#">搞笑</a>
+        <a href="#">财经</a>
+        <a href="#">体育</a>
+        <a href="#">娱乐</a>
+        <a href="#">娱乐</a>
+        <a href="#">娱乐</a>
+        <a href="#">娱乐</a>
+    </div>
+</div>
+
+
+<!--焦点图-->
+<script type="text/template" id="focusTmp">
+    <%_.each(focusList,function (n) {%>
+    <%_this=n%>
+    <div class="swiper-slide">
+        <a href="#" class="cover" style="background-image:url('<%=_this.thumbnail%>')">
+        </a>
+        <h3><span>推荐</span><%=_this.title%></h3>
+    </div>
+    <%})%>
+</script>
+<div class="focus">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<!--
+<div class="focus">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            &lt;!&ndash;<div class="swiper-slide">
+                <a href="#" class="cover" style="background-image: url(img/750_02.jpg)">
+                    <h3><span>推荐</span>军事的谁离开的地方萨比</h3>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#" class="cover" style="background-image: url(img/750_02.jpg)">
+                    <h3><span>推荐</span>军事的谁离开的地方萨比</h3>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#" class="cover" style="background-image: url(img/750_02.jpg)">
+                    <h3><span>推荐</span>军事的谁离开的地方萨比</h3>
+                </a>
+            </div>
+            <div class="swiper-slide">
+                <a href="#" class="cover" style="background-image: url(img/750_02.jpg)">
+                    <h3><span>推荐</span>军事的谁离开的地方萨比</h3>
+                </a>
+            </div>&ndash;&gt;
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>-->
+<!--列表图-->
+<div class="main"></div>
+<script type="text/template" id="listTmp">
+    <%_.each(_item,function (n) {%>
+
+    <%var _this=n;%>
+    <%if(_this.style.images){%>
+    <!--三小图-->
+    <%console.log('三小图')%>
+    <div class="list clearfix threeImg">
+        <a href="<%=_this.link.weburl%>">
+            <div class="listRight">
+                <h3><%=_this.title%></h3>
+            </div>
+            <div class="listLeft">
+                <img src="<%=_this.style.images[0]%>" alt="">
+                <img src="<%=_this.style.images[1]%>" alt="">
+                <img src="<%=_this.style.images[2]%>" alt="">
+            </div>
+            <div class="listRight">
+                <div class="i-desc clearfix">
+                    <span><%=changeTime(_this.updateTime)%></span>
+                    <p class="i-comment">
+                        <em><%=_this.comments%></em>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <%return false%>
+    <%}else if(_this.type=='phvideo'){%>
+    <%console.log('视频')%>
+    <!--视频-->
+    <div class="list clearfix threeImg video">
+        <div class="video-btn">
+
+        </div>
+        <a href="<%=_this.link.weburl%>">
+            <div class="listRight">
+                <h3><%=_this.title%></h3>
+            </div>
+            <div class="listLeft">
+                <img src="<%=_this.thumbnail%>" alt="">
+            </div>
+            <div class="listRight">
+                <div class="i-desc clearfix">
+                    <span><%=_this.phvideo.channelName%></span>
+                    <p class="i-comment">
+                        <em><%=_this.comments%></em>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <%return false%>
+    <%}else if(_this.thumbnail){%>
+    <!--左图右文-->
+    <%console.log('左图右文')%>
+    <div class="list clearfix">
+        <a href="<%=_this.link.weburl%>">
+            <div class="listLeft">
+                <img src="<%=_this.thumbnail%>" alt="">
+            </div>
+            <div class="listRight">
+                <h3><%=_this.title%></h3>
+                <div class="i-desc clearfix">
+                    <span><%=changeTime(_this.updateTime)%></span>
+                    <p class="i-comment">
+                        <em><%=_this.comments%></em>
+                        <span>专题</span>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <%return false%>
+    <%}else{%>
+    <!--纯文字-->
+
+    <%}%>
+    <%})%>
+</script>
+
+
+
+
+</body>
+<!-- rem s -->
+<script>
+    (function (doc, win) {
+        var _root = doc.documentElement,
+            resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            resizeCallback = function () {
+                var clientWidth = _root.clientWidth,
+                    fontSize = 10*10;
+                if (!clientWidth) return;
+                if(clientWidth < 1080) {
+                    fontSize = 100*(clientWidth / 750);
+                } else {
+                    fontSize = 100*(1080 / 750);
+                }
+                _root.style.fontSize = fontSize + 'px';
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvent, resizeCallback, false);
+        doc.addEventListener('DOMContentLoaded', resizeCallback, false);
+    })(document, window);
+</script>
+<!-- rem e -->
+<script src="./js/swiper.min.js"></script>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/underscore-min.js"></script>
+<script>
+    var focusList=null;
+    $.ajax({
+        url:"http://api.iclient.ifeng.com/ClientNews?id=SYLB10,SYDT10&gv=5.4.0&os=ios&uid=8jWzrXDWQeep2Nw4AZYzmHxkbneHy4Fj&callback=jQuery191037427085312083364_1483258003039&_=1483258003040",
+        dataType:'jsonp',
+        success:function (data) {
+            for (var i=0;i<data.length;i++){
+                if(data[i].type=='focus'){
+                    focusList=data[i].item;
+                }else {
+                    var itemList=focusList=data[i].item;
+                }
+            }
+            _item=itemList;
+            $('.swiper-wrapper').append(_.template($('#focusTmp').html(),focusList));
+            $('.main').append(_.template($('#listTmp').html(),_item));
+            var mySwiper=new Swiper('.swiper-container',{
+                pagination : '.swiper-pagination',
+            })
+        },
+    })
+    //事件戳
+    function changeTime(time) {
+        if(time){
+            var str=time;
+            var str1=str.substr(5,2);
+            var str2=str.substr(8,2);
+            return str=str1+'-'+str2;
+        }
+    }
+</script>
+</html>
